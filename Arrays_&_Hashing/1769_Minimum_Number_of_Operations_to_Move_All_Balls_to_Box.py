@@ -16,11 +16,11 @@ class Solution:
         O: [1,1,3]   O: [0,1]  O: [0,1,2]    O: [11,8,5,4,3,4]
 
         Speed: 0(n^2)
-            For every number check distance for every other number.
+            For every number check distance to every other number.
 
         Speed: 0(n)
             Build an array of full box indexes.
-            loop over all boxes and count the distance
+            Loop over all boxes and count the distance
         :param boxes:
         :return:
         """
