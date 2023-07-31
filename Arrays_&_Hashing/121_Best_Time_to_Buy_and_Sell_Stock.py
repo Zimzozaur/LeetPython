@@ -11,6 +11,7 @@ class Solution:
         0 <= prices[i] <= 104
         """
 
+        """ Start from back and found the greatest price
         array_len = len(prices)
 
         if array_len < 2:  # Allways zero
@@ -29,9 +30,28 @@ class Solution:
                 biggest = price
 
         return best_difference
+        """
+
+        # Find the smallest buy price approach
+        array_len = len(prices)
+
+        if array_len < 2:  # Allways zero
+            return 0
+
+        smallest = prices[0]
+        best_difference = 0
+
+        for price in prices:  # Loops over the prices
+            if price < smallest:  # is smaller change smaller
+                smallest = price
+                continue
+            if price - smallest > best_difference:  # More profitable change best_diff
+                best_difference = price - smallest
+
+        return best_difference
 
 
 if __name__ == '__main__':
     sol = Solution()
-    x = [1, 3, 0, 4]
+    x = [7,1,5,3,6,4]
     print(sol.maxProfit(x))
