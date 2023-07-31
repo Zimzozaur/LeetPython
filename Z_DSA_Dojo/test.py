@@ -1,2 +1,7 @@
-result = 10 / 3
-print(result)  # Output: 3.3333333333333335
+s1 = "ab"
+s2 = "eidboaoo"
+
+
+print(len(s1))
+print(len(s2))
+print(len(s2) - len(s1) + 1)
