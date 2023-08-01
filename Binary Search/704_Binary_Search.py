@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/binary-search/submissions/
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
         """
