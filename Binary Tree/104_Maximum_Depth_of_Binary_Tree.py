@@ -8,8 +8,10 @@
 #         self.right = right
 from TreeNode import *
 from typing import Optional
+
+
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode], depth=0) -> int:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
         """
         Counts maximum depth of a tree
         :param depth:
@@ -18,12 +20,12 @@ class Solution:
         """
 
         if not root:
-            return depth
+            return 0
 
         # Goes one level deeper and adds +1
-        depth_left = self.maxDepth(root.left, depth + 1)
-        depth_right = self.maxDepth(root.right, depth + 1)
+        depth_left = self.maxDepth(root.left)
+        depth_right = self.maxDepth(root.right)
 
-        return max(depth_left, depth_right)  # Picks greater depth
+        return 1 + max(depth_left, depth_right)  # Picks greater depth
 
 
