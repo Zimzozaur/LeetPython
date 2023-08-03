@@ -20,7 +20,8 @@ class Solution:
         if not root:
             return depth
 
-        depth_left = self.maxDepth(root.left, depth + 1)  # Goes one level deeper and adds +1
+        # Goes one level deeper and adds +1
+        depth_left = self.maxDepth(root.left, depth + 1)
         depth_right = self.maxDepth(root.right, depth + 1)
 
         return max(depth_left, depth_right)  # Picks greater depth
