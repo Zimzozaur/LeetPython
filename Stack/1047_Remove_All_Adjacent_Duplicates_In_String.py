@@ -10,7 +10,6 @@ class Solution:
         """
 
         stack = []
-
         for char in s:
             # When the stack is empty or the char is not the same
             if not stack or char != stack[-1]:
