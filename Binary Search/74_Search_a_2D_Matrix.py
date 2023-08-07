@@ -8,12 +8,13 @@ class Solution:
         :return:
         """
         for array in matrix:
+
+            if array[-1] < target:
+                continue
+
             pointer_1 = 0
             pointer_2 = len(array) - 1
             pointer_3 = int((pointer_2 + pointer_1) / 2)
-
-            if array[pointer_2] == target:  # If len is 1
-                return True
 
             while pointer_1 <= pointer_2:  # Runs until the last digit is wrong
 
