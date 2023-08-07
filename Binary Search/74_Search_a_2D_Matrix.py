@@ -7,35 +7,47 @@ class Solution:
         :param target:
         :return:
         """
-        for array in matrix:
+        # Perform Binary search on last element elements from all lists
 
-            if array[-1] < target:
-                continue
+        pointer_1 = 0
+        pointer_2 = len(matrix) - 1
 
-            pointer_1 = 0
-            pointer_2 = len(array) - 1
-            pointer_3 = int((pointer_2 + pointer_1) / 2)
+        while pointer_1 <= pointer_2:  # Runs until the last digit is wrong
+            pointer_3 = int((pointer_2 + pointer_1) / 2)  # Recalculate pointer
 
-            while pointer_1 <= pointer_2:  # Runs until the last digit is wrong
+            if matrix[pointer_3][0] <= target <= matrix[pointer_3][-1]:  # When found
+                return binary_search(matrix[pointer_3])
 
-                if array[pointer_3] == target:  # When found
-                    return True
+            elif matrix[pointer_3][-1] < target:  # When to small move pointer_1 one above
+                pointer_1 = pointer_3 + 1
 
-                elif array[pointer_3] < target:  # When to small move pointer_1 one above
-                    pointer_1 = pointer_3 + 1
-
-                else:
-                    pointer_2 = pointer_3 - 1  # When to big move pointer_2 one below
-
-                pointer_3 = int((pointer_2 + pointer_1) / 2)  # Recalculate pointer
+            else:
+                pointer_2 = pointer_3 - 1  # When to big move pointer_2 one below
 
         return False
 
 
+def binary_search(array):
+    pointer_1 = 0
+    pointer_2 = len(array) - 1
+
+    while pointer_1 <= pointer_2:  # Runs until the last digit is wrong
+
+        pointer_3 = int((pointer_2 + pointer_1) / 2)  # Recalculate pointer
+        if array[pointer_3] == target:  # When found
+            return True
+
+        elif array[pointer_3] < target:  # When to small move pointer_1 one above
+            pointer_1 = pointer_3 + 1
+
+        else:
+            pointer_2 = pointer_3 - 1  # When to big move pointer_2 one below
+
+    return False
+
+
 if __name__ == '__main__':
     sol = Solution()
-
     mat = [[1]]
-    target = 0
-
+    target = 1
     print(sol.searchMatrix(mat, target))
