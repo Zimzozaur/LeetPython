@@ -19,8 +19,6 @@ class Solution:
         mid   = 4 5 6 7 1 2 3
         right = 7 1 2 3 4 5 6
 
-        jeżeli left mniejszy od right - nie ma rotacji
-        jeżeli target większy od mi
         """
 
         left, right = 0, len(nums) - 1
