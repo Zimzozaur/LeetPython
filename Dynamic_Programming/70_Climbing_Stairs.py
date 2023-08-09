@@ -20,12 +20,9 @@ class Solution:
 
         # Bottom-Up Approach
 
-        if n == 1:
-            return 1
-
         bottom_one = 1
-        bottom_two = 2
-        for i in range(n - 2):
+        bottom_two = 1
+        for i in range(n - 1):
             bottom_two = bottom_two + bottom_one
             bottom_one = bottom_two - bottom_one
         return bottom_two
