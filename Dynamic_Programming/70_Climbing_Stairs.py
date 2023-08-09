@@ -28,7 +28,6 @@ class Solution:
         return bottom_two
 
 
-
 if __name__ == '__main__':
     sol = Solution()
     print(sol.climbStairs(5))
