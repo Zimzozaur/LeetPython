@@ -22,15 +22,13 @@ class Solution:
 
         if n == 1:
             return 1
-        elif n == 2:
-            return 2
 
-        bottom_up = [None] * (n + 1)
-        bottom_up[1] = 1
-        bottom_up[2] = 2
-        for i in range(3, n + 1):
-            bottom_up[i] = bottom_up[i - 1] + bottom_up[i - 2]
-        return bottom_up[n]
+        bottom_one = 1
+        bottom_two = 2
+        for i in range(n - 2):
+            bottom_two = bottom_two + bottom_one
+            bottom_one = bottom_two - bottom_one
+        return bottom_two
 
 
 
