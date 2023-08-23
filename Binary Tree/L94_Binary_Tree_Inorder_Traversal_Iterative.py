@@ -14,8 +14,9 @@ class Solution:
         while stack:
             if stack[-1] is None:
                 stack.pop()
-                arr.append(stack[-1].val)
-                stack.append(stack.pop().right)
+                if stack:
+                    arr.append(stack[-1].val)
+                    stack.append(stack.pop().right)
             else:
                 stack.append(stack[-1].left)
 
