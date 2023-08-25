@@ -4,28 +4,43 @@ class Solution:
     def permute(self, nums: list[int]) -> list[list[int]]:
         """Given an array of distinct integers, return all the possible permutations"""
 
-        result = []
-        permutation = []
+        """My Solution"""
+        # result = []
+        # permutation = []
+        #
+        # def recursion(nums):
+        #
+        #     # Base Case
+        #     if len(nums) < 1:
+        #         result.append(permutation[:])
+        #
+        #     for i in range(len(nums)):
+        #         permutation.append(nums[i])
+        #         copy = nums[:]
+        #         copy.pop(i)
+        #         recursion(copy)
+        #         permutation.pop()
+        #
+        # recursion(nums)
+        #
+        # return result
 
-        def recursion(nums):
+        res = []
 
-            # Base Case
-            if len(nums) < 1:
-                result.append(permutation.copy())
+        def backtrack(i):
+            if i >= len(nums):
+                res.append(nums[:])
 
-            for i in range(len(nums)):
-                permutation.append(nums[i])
-                copy = nums.copy()
-                copy.pop(i)
-                recursion(copy)
-                permutation.pop()
+            for j in range(i, len(nums)):
+                nums[i], nums[j] = nums[j], nums[i]
+                backtrack(i + 1)
+                nums[i], nums[j] = nums[j], nums[i]
 
-        recursion(nums)
-
-        return result
+        backtrack(0)
+        return res
 
 
 if __name__ == '__main__':
     sol = Solution()
-    x = [0, 1]
+    x = [0,1,2]
     print(sol.permute(x))
