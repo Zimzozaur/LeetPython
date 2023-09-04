@@ -3,12 +3,7 @@ import math
 from typing import Optional
 from TreeNode import TreeNode
 from tree_generator import tree_generate
-"""
-Idziemy w lewo aż pointer na pre będzie równy pointerowi na in
-Wtedy szukamy pierwszej liczby której nie było w in
-i znowu idziemy w lewo
 
-"""
 
 class Solution:
     def buildTree(self, preorder: list[int], inorder: list[int]) -> Optional[TreeNode]:
