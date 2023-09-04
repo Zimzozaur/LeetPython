@@ -51,6 +51,19 @@ def tree_generate(arr: list) -> Optional[TreeNode]:
     return root
 
 
+def binary_tree_generator(arr):
+    if len(arr) < 1:
+        return None
+
+    mid = len(arr) // 2
+    root = TreeNode(arr[mid])
+
+    root.left = binary_tree_generator(arr[:mid])
+    root.right = binary_tree_generator(arr[mid+1:])
+
+    return root
+
+
 if __name__ == '__main__':
     """
                 1
