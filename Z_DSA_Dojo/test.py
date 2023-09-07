@@ -1,15 +1,25 @@
-# s1 = "ab"
-# s2 = "eidboaoo"
+import heapq
+import random
 #
-#
-# print(len(s1))
-# print(len(s2))
-# print(len(s2) - len(s1) + 1)
-#
-# print(max(1, None))
+# result = 0
+# for i in range(0, 0):
+#     x = 1 * 2 ** i
+#     result += x
 
 
-items = [1, 2, 3]
+print([random.randint(1, 100) for num in range(100)])
 
-for item in items[::-1]:
-    print(item)
+
+
+
+
+
+
+# arr = ["New", "Connect", "Root"]
+# for i in range(0,3):
+#     for j in range(0,3):
+#         print(f"{arr[i]} {arr[j]}")
+
+
+
+
