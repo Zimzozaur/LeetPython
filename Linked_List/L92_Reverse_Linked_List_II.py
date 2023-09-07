@@ -6,17 +6,9 @@ from ListNode import ListNode, list_generator
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         """
-        Corners:
-        1. left is head - head to ostatni a pierwszy zostanie połączony z kolejnym po head
-        2. right is tail -
-            Jeżeli po przekręceniu list następny node to połącz ostatni nieprzekręcony z ostatnim nodem
-        3. left is right - return head
-
-        pointers:
-        1. head
-        2. first that will be last
-        3. last that will be first
-        4. last that will be connected to 2nd
+        left and right where left <= right,
+        reverse the nodes of the list from position left to position right
+        return the reversed list.
         """
 
         if left == right:
@@ -41,11 +33,10 @@ class Solution:
             else:
                 temp = temp.next
 
+        first_to_last.next = first_in_tail
         if left == 1:
-            first_to_last.next = first_in_tail
             head = last_to_first
         else:
-            first_to_last.next = first_in_tail
             tail_in_head.next = last_to_first
 
         return head
