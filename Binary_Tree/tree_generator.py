@@ -1,4 +1,5 @@
 from collections import deque
+from random import randint
 from typing import Optional
 from TreeNode import *
 
@@ -72,7 +73,7 @@ if __name__ == '__main__':
                7
     
     """
-    x = [None]
+    x = [randint(-1000, 1000) for num in range(1000)]
     y = tree_generate(x)
     print()
 
