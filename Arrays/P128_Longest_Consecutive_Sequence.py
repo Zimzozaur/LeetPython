@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/longest-consecutive-sequence/description/
 
 class Solution:
-    def longestConsecutive(self, nums: List[int]) -> int:
+    def longestConsecutive(self, nums: list[int]) -> int:
         """
         The key is to find number that starts a sequence
         Number that starts a sequence is n - 1 not in set
