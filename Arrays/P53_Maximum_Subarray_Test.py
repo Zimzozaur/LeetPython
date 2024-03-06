@@ -40,3 +40,8 @@ class BasicTest(unittest.TestCase):
         arr = [5, -2, 3, 4]
         res = self.s.maxSubArray(arr)
         self.assertEqual(10, res)
+
+    def test_3_subs_2_holes(self):
+        arr = [5, 3, -9, 7, 2, -10, 5, 3]
+        res = self.s.maxSubArray(arr)
+        self.assertEqual(9, res)
