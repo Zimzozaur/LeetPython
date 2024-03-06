@@ -7,7 +7,8 @@ class Solution:
         curSum = 0
 
         for num in nums:
-            curSum = max(curSum, 0) + num
+            # is num bigger or current subarray + num
+            curSum = max(num, curSum + num)
             maxSum = max(maxSum, curSum)
         return maxSum
 
