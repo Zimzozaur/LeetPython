@@ -35,3 +35,8 @@ class BasicTest(unittest.TestCase):
         arr = [2, -3, 1, 3, -3, 2, 2, 1]
         res = self.s.maxSubArray(arr)
         self.assertEqual(6, res)
+
+    def test_4_nums_one_low(self):
+        arr = [5, -2, 3, 4]
+        res = self.s.maxSubArray(arr)
+        self.assertEqual(10, res)
